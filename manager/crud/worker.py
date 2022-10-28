@@ -16,3 +16,6 @@ def create_worker(db: Session, worker: WorkerCreate) -> WorkerModel:
 
 def get_worker(db: Session, name: str) -> WorkerModel:
     return db.scalar(select(WorkerModel).where(WorkerModel.name == name))
+
+
+# TODO add delete CRUD to api methods for `Worker` Table

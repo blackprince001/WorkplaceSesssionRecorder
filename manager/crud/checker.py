@@ -16,3 +16,5 @@ def create_checkin(db: Session, checkin: CheckBookCreate) -> CheckBookModel:
 
 def get_checkin(db: Session, name: str) -> CheckBookModel:
     return db.scalar(select(CheckBookModel).where(CheckBookModel.name == name))
+
+# TODO add delete CRUD to api methods for `CheckBook` Table
