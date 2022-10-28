@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 
 BASE = declarative_base()
 
-
+# TODO add more columns to the Worker Table
 class Worker(BASE):
     __tablename__ = "worker"
 
@@ -17,3 +17,5 @@ class CheckBook(BASE):
     name = Column(String, primary_key=True)
     checkin_start = Column(DateTime, nullable=False)
     checkin_end = Column(DateTime, nullable=False)
+
+# TODO create a relational data Table to Worker
