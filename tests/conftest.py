@@ -21,10 +21,13 @@ def worker():
 
 @pytest.fixture(scope="session")
 def checkbook():
+    _start = datetime.datetime.now()
+    _end = datetime.datetime.now() + datetime.timedelta(hours=2, seconds=30)
+    
     return CheckBookCreate(
         name="blackprince",
-        checkin_start=datetime.datetime.now(),
-        checkin_end=datetime.datetime.now(),
+        checkin_start=_start,
+        checkin_end=_end,
     )
 
 
