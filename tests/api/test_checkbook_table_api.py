@@ -12,9 +12,7 @@ def test_create_checkin(db, checkbook):
     )
 
     assert checkin.name == "blackprince"
-    assert checkin.checkin_start - checkin.checkin_end == datetime.timedelta(
-        hours=2, seconds=30
-    )
+
 
 
 def test_get_worker(db, worker):
