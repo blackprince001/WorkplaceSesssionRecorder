@@ -1,4 +1,8 @@
 import datetime
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pytest
 from sqlalchemy import create_engine
@@ -11,7 +15,7 @@ from manager.schema.worker import WorkerCreate
 
 @pytest.fixture(scope="session")
 def engine():
-    return create_engine(url="sqlite+pysqlite:///:memory:", future=True)
+    return create_engine(url="sqlite+pysqlite:///database.db", future=True)
 
 
 @pytest.fixture(scope="session")
@@ -32,7 +36,7 @@ def checkbook():
 
 
 @pytest.fixture
-def db():
+def db(engine):
     with Session(engine) as session:
         BASE.metadata.create_all(bind=engine)
         yield session
