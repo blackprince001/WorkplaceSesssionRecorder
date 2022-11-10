@@ -1,2 +1,0 @@
-pydantic==1.9.2
-SQLAlchemy==1.4.40
