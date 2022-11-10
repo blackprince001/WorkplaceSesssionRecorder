@@ -14,28 +14,21 @@
     cd Workplace-Session-Manager
     ```
 
-- Set up a virtual environment with Venv on Vscode or any python environment manager you have installed, and it will automatically install the dependencies.
+- Set up a virtual environment with Venv on Vscode or any python environment manager you have installed, and it will automatically install the dependencies. This project uses pipenv to handle dependency installs and virtual environments.
 
 - To simply install project dependencies, run the command below.
 
   ```bash
-  make install
+  pipenv sync
   ```
 
 - Set up a dev environment by running the command to install dependencies to work on the project. Do note that the make command is already dependent on the one above. So if you use this command, there will be no need for you to run the prev one.
   
   ```bash
-    make dev-install
+  pipenv sync --dev
   ```
 
   while you're in `/Workplace-Session-Manager`
-
-## Other Makefile commands to note
-
-- `make test` - to test the api methods
-- `make test-worker` - to test the worker Table in the database
-- `make test-checkbook` - to test the checkbook Table in database
-- `make pytest-clean` - to clean pytest_cache FILES
 
 ## Testing
 
@@ -44,7 +37,7 @@ To run the tests in the project:
 - You need to install the dev packages:
 
   ```bash
-  make dev-install
+  pipenv install --dev
   ```
   
 - Run pytest make commands highlighted above
@@ -57,12 +50,7 @@ To run the tests in the project:
 
 ```bash
 .
-├── database.db
-├── design.drawio
 ├── design.png
-├── dev-requirements.txt
-├── main.py
-├── Makefile
 ├── manager
 │   ├── core.py
 │   ├── crud
@@ -78,8 +66,9 @@ To run the tests in the project:
 │   └── utils
 │       ├── __init__.py
 │       └── utils.py
+├── Pipfile
+├── Pipfile.lock
 ├── README.md
-├── requirements.txt
 └── tests
     ├── api
     │   ├── __init__.py
@@ -88,5 +77,5 @@ To run the tests in the project:
     ├── conftest.py
     └── __init__.py
 
-6 directories, 24 files
+6 directories, 20 files
 ```
