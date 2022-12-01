@@ -2,8 +2,6 @@ import datetime
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
@@ -12,6 +10,7 @@ from manager.models import BASE
 from manager.schema.checkbook import CheckBookCreate
 from manager.schema.worker import WorkerCreate
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 @pytest.fixture(scope="session")
 def engine():
