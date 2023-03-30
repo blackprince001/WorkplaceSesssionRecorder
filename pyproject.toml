@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "workplace-session-manager"
+version = "0.1.0"
+description = "A backend service template for measuring workplace activity using check-in sessions and generic api methods."
+authors = ["blackprince001 <appiahboaduprince@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "workplace_session_manager"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "==1.9.2"
+sqlalchemy = "==1.4.40"
+
+
+[tool.poetry.group.dev.dependencies]
+pydantic = "==1.9.2"
+sqlalchemy = "==1.4.40"
+black = "==22.3.0"
+pytest = "==7.1.2"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
